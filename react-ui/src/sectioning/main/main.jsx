@@ -1,10 +1,14 @@
+import { Switch } from 'react-router-dom';
+import Routes from '../../routes';
 import './main.css';
 
 function Main() {
 
     return(
         <div className="main-container">
-            <h1>Main</h1>
+            <Switch>
+                <Routes />
+            </Switch>
         </div>
     )
 }
