@@ -18,9 +18,21 @@ server.get('/heartbeat', (req, res) => {
     });
 });
 
+// getting Cases table from DB
 server.get('/cases', async (req, res) => {
     const cases = await Cases.findAll();
-    res.json(cases)    // Cases is undefined
+    res.send(cases)    // Cases is undefined
+});
+
+// getting cases from Cases table from DB by id
+server.get('/cases/:id', async (req, res) => {
+    const caseId = req.params.id;
+    const caseDataById = await Cases.findAll({
+        where: {
+            id: caseId
+        }
+    });
+    res.json(caseDataById);
 });
 
 server.listen(PORT, () => {
