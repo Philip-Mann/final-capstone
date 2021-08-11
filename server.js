@@ -19,13 +19,13 @@ server.get('/heartbeat', (req, res) => {
 });
 
 // getting Cases table from DB
-server.get('/cases', async (req, res) => {
+server.get('/api/cases', async (req, res) => {
     const cases = await Cases.findAll();
     res.json(cases);
 });
 
 // getting cases from Cases table from DB by id
-server.get('/cases/:id', async (req, res) => {
+server.get('/api/cases/:id', async (req, res) => {
     const caseId = req.params.id;
     const caseDataById = await Cases.findAll({
         where: {

@@ -4,6 +4,7 @@ import Cases from './cases/cases';
 import Forum from './forum/forum';
 import About from './about/about';
 import Login from './login/login';
+import CaseId from "../components/caseId/caseId";
 
 const Routes = () => {
 
@@ -18,6 +19,11 @@ const Routes = () => {
                 exact
                 path="/cases"
                 render={() => <Cases />}
+            />
+            <Route
+                exact
+                path='/cases/:id'
+                render={() => <CaseId />}
             />
             <Route
                 exact

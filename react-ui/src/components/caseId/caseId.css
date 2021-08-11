@@ -1,0 +1,37 @@
+.case-container {
+    /* margin: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+
+}
+
+.case-image {
+    display: flex;
+    justify-content: center;
+    width: 17rem;
+    border-radius: 0 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    margin: 1rem;
+}
+
+.case-image img {
+    width: 16rem;
+    height: 16rem;
+}
+
+.case-list-container {
+    border-radius: 10px 0;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    margin: 1rem;
+}
+.case-list {
+    padding: 1rem;
+}
+
+.case-description {
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    border-radius: 0 10px;
+}
