@@ -18,5 +18,3 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
-
-//JUST SET UP STORE< WE USING RTK UP IN THIS BITCH

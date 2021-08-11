@@ -21,7 +21,7 @@ server.get('/heartbeat', (req, res) => {
 // getting Cases table from DB
 server.get('/cases', async (req, res) => {
     const cases = await Cases.findAll();
-    res.send(cases)    // Cases is undefined
+    res.json(cases);
 });
 
 // getting cases from Cases table from DB by id

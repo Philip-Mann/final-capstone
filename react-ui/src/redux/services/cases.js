@@ -1,7 +1,7 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const casesDataBase = createApi({
-    reducerPath: 'caseDataBase',
+    reducerPath: 'casesDataBase',
     baseQuery: fetchBaseQuery({ baseUrl: '/'}),
     endpoints: (builder) => ({
         getCases: builder.query({

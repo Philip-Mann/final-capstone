@@ -1,9 +1,10 @@
-import './cases.css';
+import SearchCases from '../../components/cases/search/searchCases';
+// import '../cases/cases.css';
 
 const Cases = () => {
 
     return(
-        <h1>Cases</h1>
+        <SearchCases />
     )
 }
 

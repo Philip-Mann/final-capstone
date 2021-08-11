@@ -1,0 +1,50 @@
+/* searchCases.jsx */
+.search-cases-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+
+}
+
+.search-input {
+    font-size: 1.25rem;
+    height: 2rem;
+    width: 75%;
+}
+
+/* casesCard.jsx */
+.case-card-container {
+    margin: 0 auto;
+    max-width: 1080px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.case-card {
+    align-items: center;
+    border-radius: 0 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 17rem;
+    margin-top: 1rem;
+    width: 14rem;
+}
+
+.case-image {
+    border-radius: 10px 0;
+}
+.case-image img {
+    height: 14rem;
+    width: 14rem;
+}
+
+.case-info {
+    text-align: center;
+}
