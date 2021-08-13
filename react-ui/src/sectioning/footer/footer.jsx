@@ -1,4 +1,5 @@
 import './footer.css';
+import { Link } from 'react-router-dom'
 
 function Footer() {
 
@@ -10,6 +11,13 @@ function Footer() {
                 </div>
                 <div className="credits">
                     <a href="https://github.com/Philip-Mann/final-capstone" >GitHub</a>
+                </div>
+                <div className="case-entry">
+                    <Link 
+                        to="/submitcase"
+                    >
+                        Submit a Case
+                    </Link>
                 </div>
             </footer>
         </div>

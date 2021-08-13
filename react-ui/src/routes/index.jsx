@@ -5,6 +5,7 @@ import Forum from './forum/forum';
 import About from './about/about';
 import Login from './login/login';
 import CaseId from "../components/caseId/caseId";
+import SubmitCase from '../components/submitCase/submitCase'
 
 const Routes = () => {
 
@@ -39,6 +40,11 @@ const Routes = () => {
                 exact
                 path="/login"
                 render={() => <Login />}
+            />
+            <Route
+                exact
+                path="/submitcase"
+                render={() => <SubmitCase />}
             />
         </>
     )

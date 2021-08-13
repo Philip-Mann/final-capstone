@@ -35,7 +35,6 @@ const CaseId = () => {
                     </ul>
                 </div>
             </div>
-            
             <div className="case-description">
                 <p>{caseData.description}</p>
             </div>
