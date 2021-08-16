@@ -24,7 +24,7 @@ const Images = ({ handleChange }) => {
         .catch(err => console.log(err)) 
     }
 
-    // once user uploads, this sets the image url to image
+    // once user uploads, handleImagesChange sets the image url to image
     const handleImagesChange = e => {
         setImage(e.target.files[0]);
     }
