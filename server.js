@@ -11,6 +11,7 @@ const server = express();
 
 // Serving up the static build file for React
 server.use(express.static(path.resolve(__dirname + '/react-ui/build')));
+server.use(express.json());
 
 server.get('/heartbeat', (req, res) => {
     res.json({
@@ -33,6 +34,34 @@ server.get('/api/cases/:id', async (req, res) => {
         }
     });
     res.json(caseDataById);
+});
+
+server.post('/api/cases', async (req, res) => {
+    console.log(req.body)   //empty object
+    const { name, race, sex, age, height, location,
+            year, images, body_condition,
+            description, characteristics, agencies, cod } = req.body;
+            console.log("name:",name)
+            const newCase = await Cases.create({
+                name, 
+                race,
+                sex,
+                age,
+                height,
+                location,
+                year,
+                images,
+                body_condition,
+                description,
+                characteristics,
+                agencies,
+                cod
+            });
+        console.log('new case entered successfuly', req.body);
+        res.send({
+            "message": "new case created successfully",
+            "id": newCase.id
+        });
 });
 
 server.listen(PORT, () => {

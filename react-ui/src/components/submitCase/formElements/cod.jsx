@@ -8,8 +8,8 @@ const Cod = ({ cod, handleChange }) => {
         <div className="form-body-cod case-form">
             <label>Cause of Death</label>
             <input 
+                placeholder="Cause of Death"
                 htmlFor="cod" 
-                placeholder="Cause of Death" 
                 id="cod" 
                 value={cod}
                 onChange={handleCodChange}

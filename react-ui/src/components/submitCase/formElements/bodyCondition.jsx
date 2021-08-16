@@ -1,4 +1,4 @@
-const BodyCondition = ({ bodyCondition, handleChange }) => {
+const BodyCondition = ({ body_condition, handleChange }) => {
 
     const handleBodyConditionChange = e => {
         handleChange(e.target.value);
@@ -12,7 +12,7 @@ const BodyCondition = ({ bodyCondition, handleChange }) => {
                 htmlFor="body_condition" 
                 id="body_condition"
                 onChange={handleBodyConditionChange}
-                value={bodyCondition}
+                value={body_condition}
             />
         </div>
     )

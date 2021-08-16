@@ -15,7 +15,7 @@ const CaseId = () => {
     return (
         <>
         {data?.map(caseData => 
-        <div className="case-container">
+        <div className="case-container" key={caseData.id}>
             <div className="case-image">
                 <img src={caseData.images} alt={caseData.name} />
             </div>

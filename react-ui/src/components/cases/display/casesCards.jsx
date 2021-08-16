@@ -4,7 +4,7 @@ import { casesData } from "../../../redux/reducers/cases";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const CasesCard = ({ searchQuery }) => {
+const CasesCards = ({ searchQuery }) => {
 
     const fetchData = useSelector(casesData);
     const { data, isLoading } = useGetCasesQuery(fetchData);
@@ -31,4 +31,4 @@ const CasesCard = ({ searchQuery }) => {
     )
 }
 
-export default CasesCard;
+export default CasesCards;

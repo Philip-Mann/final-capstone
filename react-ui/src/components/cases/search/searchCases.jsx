@@ -1,6 +1,6 @@
 import '../cases.css'
 import { useState } from "react";
-import Cases from '../display/casesCard'
+import CasesCards from '../display/casesCards'
 
 const SearchCases = () => {
 
@@ -37,7 +37,7 @@ const SearchCases = () => {
                 </button>
             </form>
         </div>
-        <Cases />
+        <CasesCards />
         </>
     )
 }

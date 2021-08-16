@@ -6,11 +6,13 @@ import Cod from './formElements/cod';
 import Description from './formElements/description';
 import Height from './formElements/height';
 import Name from './formElements/name';
-import Location from './formElements/height'
+import Location from './formElements/location'
 import Sex from './formElements/sex';
-import Submit from './formElements/submit';
 import Race from './formElements/race';
 import { useState } from 'react';
+import Year from './formElements/year';
+import Agencies from './formElements/agencies';
+import Images from './formElements/images';
 
 const SubmitForm = () => {
     
@@ -49,14 +51,14 @@ const SubmitForm = () => {
         setCod(cod);
     }
     
-    const [bodyCondition, setBodyCondition] = useState('');
-    const handleBodyConditionChange = bodyCondition => {
-        setBodyCondition(bodyCondition)
+    const [body_condition, setBody_Condition] = useState('');
+    const handleBodyConditionChange = body_condition => {
+        setBody_Condition(body_condition)
     }
     
-    const [descrtiption, setDescription] = useState('');
-    const handleDescriptionChange = descrtiption => {
-        setDescription(descrtiption)
+    const [description, setDescription] = useState('');
+    const handleDescriptionChange = description => {
+        setDescription(description);
     }
     
     const [location, setLocation] = useState('');
@@ -64,9 +66,46 @@ const SubmitForm = () => {
         setLocation(location);
     }
 
-    const handleSubmit = e => {
+    const [year, setYear] = useState('');
+    const handleYearChange = year => {
+        setYear(year)
+    }
+
+    const [agencies, setAgencies] = useState('');
+    const handleAgenciesChange = agencies => {
+        setAgencies(agencies)
+    }
+
+    const [images, setImages] = useState('');
+    // const [url, setUrl] = useState('');
+    const handleImagesChange = (images) => {
+        setImages(images);
+        // setUrl(url);
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(name, age, sex, race, height, characteristics, cod, bodyCondition, descrtiption, location)
+        const result = await fetch('/api/cases', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, age, sex, race, height, year, characteristics, cod, body_condition, description, location, images, agencies })
+        });
+        console.log(await result.json());
+        setName('');
+        setAge('');
+        setSex('');
+        setRace('');
+        setHeight('');
+        setCharacteristics('');
+        setCod('');
+        setBody_Condition('');
+        setDescription('');
+        setLocation('');
+        setImages('');
+        setYear('');
+        setAgencies('');
     }
 
     return (
@@ -90,6 +129,13 @@ const SubmitForm = () => {
                     handleChange={handleRaceChange}
                     race={race}
                 />
+                <Images 
+                    handleChange={handleImagesChange}
+                />
+                <Year 
+                    handleChange={handleYearChange}
+                    year={year}
+                />
                 <Height 
                     handleChange={handleHeightChange}
                     height={height}
@@ -98,25 +144,34 @@ const SubmitForm = () => {
                     characteristics={characteristics}
                     handleChange={handleCharacteristicsChange}
                 />
+                <Agencies 
+                    agencies={agencies}
+                    handleChange={handleAgenciesChange}
+                />
                 <Cod 
                     cod={cod}
                     handleChange={handleCodChange}
                 />
                 <BodyCondition 
-                    bodyCondition={bodyCondition}
+                    body_condition={body_condition}
                     handleChange={handleBodyConditionChange}
-                />
-                <Description 
-                    descrtiption={descrtiption}
-                    handleChange={handleDescriptionChange}
                 />
                 <Location 
                     handleChange={handleLocationChange}
                     location={location}
                 />
-                <Submit 
-                    onClick={handleSubmit}
+                <Description 
+                    description={description}
+                    handleChange={handleDescriptionChange}
                 />
+                <div className="form-submit case-form">
+                    <button 
+                        type="submit"
+                        onClick={handleSubmit}    
+                    >
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
         </>
