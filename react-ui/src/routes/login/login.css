@@ -1,0 +1,8 @@
+.button-containers {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 6rem;
+    justify-content: space-around;
+}
+
