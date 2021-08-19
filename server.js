@@ -6,6 +6,7 @@ const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const { Cases } = require('./models')
 const { PORT } = process.env;
+const news = require('./articles/articles');
 
 // changed from app to server
 const server = express();
@@ -34,6 +35,8 @@ server.get('/heartbeat', (req, res) => {
         "is": "working"
     });
 });
+
+
 
 // getting Cases table from DB
 server.get('/api/cases', async (req, res) => {
@@ -81,6 +84,10 @@ server.post('/api/cases', async (req, res) => {
         });
 });
 
+server.get('/api/news', (req, res) => {
+    res.send(news)
+})
+
 // Facebook Auth
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
@@ -116,7 +123,7 @@ passport.serializeUser(function(user, cb) {
     cb(null, user);
 });
 passport.deserializeUser(function(obj, cb) {
-cb(null, obj);
+    cb(null, obj);
 });
 
 server.listen(PORT, () => {

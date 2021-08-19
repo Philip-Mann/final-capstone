@@ -11,7 +11,7 @@ const Images = ({ handleChange }) => {
         data.append("file", image)
         data.append("upload_preset", "gyb89xkz")
         data.append("cloud_name", "dok0bdrkl")
-        fetch("	https://api.cloudinary.com/v1_1/dok0bdrkl/image/upload", {
+        fetch("https://api.cloudinary.com/v1_1/dok0bdrkl/image/upload", {
             method: 'post',
             body: data
         })

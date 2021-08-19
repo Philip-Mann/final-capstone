@@ -1,24 +1,22 @@
 .case-container {
-    /* margin: 1rem; */
-    display: flex;
-    flex-direction: column;
     align-items: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
-
+    display: flex;
+    flex-direction: column;
 }
 
 .case-image {
-    display: flex;
-    justify-content: center;
-    width: 17rem;
     border-radius: 0 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    display: flex;
+    justify-content: center;
     margin: 1rem;
+    width: 17rem;
 }
 
 .case-image img {
-    width: 16rem;
     height: 16rem;
+    width: 16rem;
 }
 
 .case-list-container {
@@ -30,8 +28,13 @@
     padding: 1rem;
 }
 
+.case-list li {
+    list-style-type: none;
+    text-align: center;
+}
+
 .case-description {
-    padding: 1rem;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
     border-radius: 0 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    padding: 1rem;
 }
