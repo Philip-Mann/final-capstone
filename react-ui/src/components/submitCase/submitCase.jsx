@@ -77,10 +77,8 @@ const SubmitForm = () => {
     }
 
     const [images, setImages] = useState('');
-    // const [url, setUrl] = useState('');
     const handleImagesChange = (images) => {
         setImages(images);
-        // setUrl(url);
     }
 
     const handleSubmit = async (e) => {
@@ -110,7 +108,6 @@ const SubmitForm = () => {
 
     return (
         <>
-        <h1>Submit Case</h1>
         <div className="submit-case-form-container">
             <form >
                 <Name 

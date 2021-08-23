@@ -6,7 +6,7 @@ const Images = ({ handleChange }) => {
 
     //posting user uploaded image to Cases table
     const uploadImage = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const data = new FormData()
         data.append("file", image)
         data.append("upload_preset", "gyb89xkz")
@@ -30,8 +30,8 @@ const Images = ({ handleChange }) => {
     }
     
     return (
-        <div className="form-agencies case-form">
-            <label>Image URL</label>
+        <div className="form-images case-form">
+            <label>Upload Image</label>
             <input 
                 placeholder="Images" 
                 htmlFor="images" 
@@ -44,6 +44,7 @@ const Images = ({ handleChange }) => {
             >
                 Upload Image
             </button>
+            
         </div>
     )
 }
