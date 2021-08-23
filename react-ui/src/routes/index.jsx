@@ -5,6 +5,8 @@ import About from './about/about';
 import Login from './login/login';
 import CaseId from "../components/caseId/caseId";
 import SubmitCase from '../components/submitCase/submitCase'
+import AboutDev from "../components/about/aboutDev";
+import AboutSite from "../components/about/aboutSite";
 
 const Routes = () => {
 
@@ -29,6 +31,16 @@ const Routes = () => {
                 exact
                 path="/about"
                 render={() => <About />}
+            />
+            <Route
+                exact
+                path="/about/dev"
+                render={() => <AboutDev />}
+            />
+            <Route
+                exact
+                path="/about/site"
+                render={() => <AboutSite />}
             />
             <Route
                 exact

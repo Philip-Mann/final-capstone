@@ -11,6 +11,8 @@ const news = require('./articles/articles');
 // changed from app to server
 const server = express();
 
+process.env.HTTPS = true
+
 // session middleware
 const sess = {
     secret: 'keyboard cat',
@@ -36,8 +38,6 @@ server.get('/heartbeat', (req, res) => {
     });
 });
 
-
-
 // getting Cases table from DB
 server.get('/api/cases', async (req, res) => {
     const cases = await Cases.findAll();
@@ -61,7 +61,7 @@ server.post('/api/cases', async (req, res) => {
     const { name, race, sex, age, height, location,
             year, images, body_condition,
             description, characteristics, agencies, cod } = req.body;
-            console.log("name:",name)
+            console.log("name:", name);
             const newCase = await Cases.create({
                 name, 
                 race,
@@ -85,45 +85,24 @@ server.post('/api/cases', async (req, res) => {
 });
 
 server.get('/api/news', (req, res) => {
-    res.send(news)
-})
+    res.send(news);
+});
 
-// Facebook Auth
-passport.use(new FacebookStrategy({
-    clientID: process.env.FACEBOOK_APP_ID,
-    clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK_URL,
-    profileFields: ['id', 'displayName', 'email', 'name', 'photos'],
-    passReqToCallback: true,
-  },
-  async function(accessToken, refreshToken, profile, cb) {
-    console.log("This is from facebook *******", JSON.stringify(profile));
-    let user = await User.findOrCreate({
-        where: {
-            loginStrategy: profile.provider,
-            loginStrategyId: profile.id,
-            userName: profile.displayName
-        }
+server.get('/profile', (req, res) => {
+    console.log(req.user);
+    res.send({
+        "message": "user has logged in",
+        user: req.user
     });
-    cb(null, profile);
-  }
-));
+});
 
-// Sign in With Facebook Callback
-server.get('/auth/facebook', passport.authenticate('facebook'));
-// Sign in With Facebook Callback
-server.get('/auth/facebook/callback',  // or callback
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
+const auth = require('./routes/auth');
+// const { SELECT } = require('sequelize/types/lib/query-types');
+server.use('/auth', auth)
+
+server.get('/logout', function (req, res) {
+    req.logout();
     res.redirect('/');
-});
-
-passport.serializeUser(function(user, cb) {
-    cb(null, user);
-});
-passport.deserializeUser(function(obj, cb) {
-    cb(null, obj);
 });
 
 server.listen(PORT, () => {

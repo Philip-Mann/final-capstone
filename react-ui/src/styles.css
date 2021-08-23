@@ -17,7 +17,7 @@ a:visited {
 }
 
 a:hover {
-  color: blue;
+  text-shadow: 0 3px 10px rgb(12 55 69 / 0.8);
 }
 
 a:active {
