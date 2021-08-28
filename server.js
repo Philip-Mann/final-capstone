@@ -122,7 +122,7 @@ const auth = require('./routes/auth');
 server.use('/auth', auth);
 
 server.get('*', function (req, res) {
-    res.sendFile('./react-ui/build/index.html');
+    res.sendFile(__dirname + '/react-ui/build/index.html');
 });
 
 server.listen(PORT, () => {
