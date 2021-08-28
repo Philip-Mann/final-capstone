@@ -122,9 +122,7 @@ const auth = require('./routes/auth');
 server.use('/auth', auth);
 
 server.get('*', function (req, res) {
-    res.send({
-        "is": "npt working ;/"
-    });
+    res.sendFile('./react-ui/build/index.html');
 });
 
 server.listen(PORT, () => {
