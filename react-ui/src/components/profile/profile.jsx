@@ -23,9 +23,6 @@ const Profile = () => {
         fetchUserProfile(id);
     }, [id]);
 
-    // const fetchData = useSelector(userData);
-    // const { data } = useGetUserInfoQuery(fetchData);
-
     return (
         <>
         {isLoading ? <h1>Loading profile...</h1> :  

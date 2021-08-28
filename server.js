@@ -121,9 +121,10 @@ server.get('/api/news', (req, res) => {
 const auth = require('./routes/auth');
 server.use('/auth', auth);
 
-server.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/');
+server.get('*', function (req, res) {
+    res.send({
+        "is": "npt working ;/"
+    });
 });
 
 server.listen(PORT, () => {

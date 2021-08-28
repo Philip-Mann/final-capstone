@@ -42,8 +42,6 @@ router.get('/google/callback',
     // console.log(req.user);
     // console.log("<<<<<<<<<<<<<<");
     res.redirect(`/profile/${id}`);
-
-    //TODO: WHY IS LINE 41 not being run?
   }
 );
 
