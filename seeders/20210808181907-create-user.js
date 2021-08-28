@@ -8,10 +8,10 @@ module.exports = {
         email: 'taylor_g',
         password: 'admin1',
         admin: true,
-        createdAt: new Date(),
-        updatedAt: new Date(),
         loginStrategy: 'Facebook',
-        loginStrategyId: '0123456789'
+        loginStrategyId: '0123456789',
+        createdAt: new Date(),
+        updatedAt: new Date()
     }], {});
   },
   down: async (queryInterface, Sequelize) => {

@@ -3,14 +3,23 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
-const { Cases } = require('./models')
+// const FacebookStrategy = require('passport-facebook').Strategy;
+const { Cases, Users } = require('./models')
 const { PORT } = process.env;
 const news = require('./articles/articles');
+const cors = require('cors');
+const corsOptions = { 
+    origin:'*',
+    optionSuccessStatus:200, 
+
+}
+
+console.log("COMING FROM USERS!!!", Users)
+
 
 // changed from app to server
 const server = express();
-
+server.use(cors(corsOptions));
 process.env.HTTPS = true
 
 // session middleware
@@ -20,7 +29,7 @@ const sess = {
       maxAge: 24 * 60 * 60 * 1000
     },
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 }
 server.use(session(sess));
 server.use(passport.initialize());
@@ -36,6 +45,17 @@ server.get('/heartbeat', (req, res) => {
     res.json({
         "is": "working"
     });
+});
+
+// const userId = req.user
+
+server.get(`/profile/:id`, async (req, res) => {
+    const profileInfo = await Users.findOne({
+        where: {
+            loginStrategyId: req.params.id
+        }
+    })
+    res.json(profileInfo);
 });
 
 // getting Cases table from DB
@@ -88,17 +108,18 @@ server.get('/api/news', (req, res) => {
     res.send(news);
 });
 
-server.get('/profile', (req, res) => {
-    console.log(req.user);
-    res.send({
-        "message": "user has logged in",
-        user: req.user
-    });
-});
+
+
+// server.get('/profile', (req, res) => {
+//     console.log(req.user);
+//     res.send({
+//         "message": "user has logged in",
+//         user: req.user
+//     });
+// });
 
 const auth = require('./routes/auth');
-// const { SELECT } = require('sequelize/types/lib/query-types');
-server.use('/auth', auth)
+server.use('/auth', auth);
 
 server.get('/logout', function (req, res) {
     req.logout();

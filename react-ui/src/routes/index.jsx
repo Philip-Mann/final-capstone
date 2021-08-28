@@ -7,6 +7,7 @@ import CaseId from "../components/caseId/caseId";
 import SubmitCase from '../components/submitCase/submitCase'
 import AboutDev from "../components/about/aboutDev";
 import AboutSite from "../components/about/aboutSite";
+import Profile from "../components/profile/profile";
 
 const Routes = () => {
 
@@ -41,6 +42,11 @@ const Routes = () => {
                 exact
                 path="/about/site"
                 render={() => <AboutSite />}
+            />
+            <Route
+                exact
+                path="/profile/:id"
+                render={() => <Profile />}
             />
             <Route
                 exact

@@ -15,7 +15,12 @@ export const casesDataBase = createApi({
                 return `/api/cases/${id}`;
             }
         }),
+        getUserInfo: builder.query({
+            query: (id) => {
+                return `/profile/${id}`
+            }
+        })
     }),
 });
 
-export const { useGetCasesQuery, useGetCaseQuery } = casesDataBase;
+export const { useGetCasesQuery, useGetCaseQuery, useGetUserInfoQuery } = casesDataBase;

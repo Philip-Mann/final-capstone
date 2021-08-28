@@ -18,17 +18,17 @@ const AboutDev = () => {
                 <div className="about-dev-icons">
                     <div className="about-github icon">
                         <a href="https://github.com/Philip-Mann" rel="noreferrer" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
+                            <i className="fab fa-github"></i> GitHub
                         </a>
                     </div>
                     <div className="about-portfolio icon">
                         <a href="https://pjm-portfolio.netlify.app/" rel="noreferrer" target="_blank">
-                            <i class="fas fa-briefcase"></i> Portfolio
+                            <i className="fas fa-briefcase"></i> Portfolio
                         </a>
                     </div>
                     <div className="about-linkedin icon">
                         <a href="https://www.linkedin.com/in/philip-mann-b7989b173/" rel="noreferrer" target="_blank">
-                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                            <i className="fab fa-linkedin-in"></i> LinkedIn
                         </a>
                     </div>
                 </div>

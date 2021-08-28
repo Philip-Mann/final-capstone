@@ -2,7 +2,7 @@ import '../login.css';
 
 
 
-const GoogleButton = () => {
+const FacebookButton = () => {
 
     return (
         <div className="login-button facebook">
@@ -14,4 +14,4 @@ const GoogleButton = () => {
     )
 }
 
-export default GoogleButton;
+export default FacebookButton;

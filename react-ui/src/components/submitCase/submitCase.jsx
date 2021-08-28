@@ -1,4 +1,4 @@
-import './submitCase.css'
+import './submitCase.css';
 import Age from './formElements/age';
 import BodyCondition from './formElements/bodyCondition';
 import Characteristics from './formElements/charcteristics';
@@ -6,7 +6,7 @@ import Cod from './formElements/cod';
 import Description from './formElements/description';
 import Height from './formElements/height';
 import Name from './formElements/name';
-import Location from './formElements/location'
+import Location from './formElements/location';
 import Sex from './formElements/sex';
 import Race from './formElements/race';
 import { useState } from 'react';

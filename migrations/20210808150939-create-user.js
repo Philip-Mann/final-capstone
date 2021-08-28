@@ -23,6 +23,12 @@ module.exports = {
       admin: {
         type: Sequelize.BOOLEAN
       },
+      loginStrategy: {
+        type: Sequelize.STRING
+      },
+      loginStrategyId: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
