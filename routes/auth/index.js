@@ -41,7 +41,7 @@ router.get('/google/callback',
     // console.log(">>>>>>>>>>>>>>");
     // console.log(req.user);
     // console.log("<<<<<<<<<<<<<<");
-    res.redirect(`https://pjm-doe-project.herokuapp.com/profile/${id}`);
+    res.redirect(`/profile/${id}`);
 
     //TODO: WHY IS LINE 41 not being run?
   }

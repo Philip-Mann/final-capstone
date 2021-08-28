@@ -12,7 +12,7 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchUserProfile = (id) => {
-            fetch(`/profile/${id}`)
+            fetch(`/api/profile/${id}`)
             .then(res => res.json())
             .then(userInfo => {
                 setUserInfo(userInfo)

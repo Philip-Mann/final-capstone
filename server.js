@@ -49,7 +49,7 @@ server.get('/heartbeat', (req, res) => {
 
 // const userId = req.user
 
-server.get(`/profile/:id`, async (req, res) => {
+server.get(`/api/profile/:id`, async (req, res) => {
     const profileInfo = await Users.findOne({
         where: {
             loginStrategyId: req.params.id
