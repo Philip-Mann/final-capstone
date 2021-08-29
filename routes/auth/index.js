@@ -58,7 +58,7 @@ passport.use(new FacebookStrategy({
 // this anonymous function fires after a successful login
 async function(accessToken, refreshToken, profile, cb) {
 	console.log("This is from facebook *******", JSON.stringify(profile));
-  let user = await User.findOrCreate({
+  let user = await Users.findOrCreate({
     where: {
       firstName: profile.displayName,
       loginStrategy:    profile.provider,
