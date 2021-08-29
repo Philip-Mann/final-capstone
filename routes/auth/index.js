@@ -84,7 +84,7 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     const id = req.user.id;
-    res.redirect(`/profile/:${id}`);
+    res.redirect(`/profile/${id}`);
   }
 );
 
