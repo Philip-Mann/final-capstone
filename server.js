@@ -108,16 +108,6 @@ server.get('/api/news', (req, res) => {
     res.send(news);
 });
 
-
-
-// server.get('/profile', (req, res) => {
-//     console.log(req.user);
-//     res.send({
-//         "message": "user has logged in",
-//         user: req.user
-//     });
-// });
-
 const auth = require('./routes/auth');
 server.use('/auth', auth);
 
