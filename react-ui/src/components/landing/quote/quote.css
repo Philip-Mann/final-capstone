@@ -1,3 +1,11 @@
+.wiki-quote {
+    /* border: 1px solid red; */
+    /* display: inline-flex; */
+    /* justify-content: center; */
+    margin: 1rem;
+    text-align: center;
+}
+
 .wiki-quote h3 {
     display: inline-block;
 }

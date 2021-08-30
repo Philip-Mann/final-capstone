@@ -9,7 +9,6 @@ const SearchCases = () => {
     const handleSearch = e => {
         e.preventDefault();
         setSearchQuery(e.target.value);
-        // console.log('SearchCases component:', searchQuery);
     }
 
     const handleSubmit = e => {

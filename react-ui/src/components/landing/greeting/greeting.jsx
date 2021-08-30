@@ -4,7 +4,7 @@ const Greeting = () => {
 
     return (
         <div className="title">
-            <h1>Nameless</h1>
+            <h1>Nameless Database</h1>
         </div>
     )
 }

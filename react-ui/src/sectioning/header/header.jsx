@@ -25,11 +25,6 @@ function Header() {
                         </div>
                     </div>
                     <div className="nav-right">
-                            <div className="user navs">
-                                <NavLink to="/profile">
-                                    Profile
-                                </NavLink>
-                            </div>
                             <div className="login navs">
                                 <NavLink to="/login">
                                     Login

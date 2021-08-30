@@ -1,10 +1,9 @@
-import SearchCases from '../../components/cases/search/searchCases';
-// import '../cases/cases.css';
+import CasesCards from "../../components/cases/display/casesCards";
 
 const Cases = () => {
 
     return(
-        <SearchCases />
+        <CasesCards />
     )
 }
 

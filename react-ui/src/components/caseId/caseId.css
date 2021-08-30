@@ -1,20 +1,23 @@
 .case-container {
-    align-items: center;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
     display: flex;
     flex-direction: column;
+    margin: 1rem;
 }
-
+.case-image-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .case-image {
-    border-radius: 0 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
     display: flex;
+    height: 100%;
     justify-content: center;
-    margin: 1rem;
-    width: 17rem;
 }
 
 .case-image img {
+    border-radius: 50%;
     height: 16rem;
     width: 16rem;
 }
@@ -25,7 +28,7 @@
     margin: 1rem;
 }
 .case-list {
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .case-list li {

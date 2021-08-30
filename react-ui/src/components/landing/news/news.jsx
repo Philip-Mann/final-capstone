@@ -44,21 +44,23 @@ const News = () => {
             </div>
         </div>
         }
-            <button
-                onClick={() => setSelectedArticle(0)}
-            >
-                Article 1
-            </button>
-            <button
-                onClick={() => setSelectedArticle(1)}
-            >
-                Article 2
-            </button>
-            <button
-                onClick={() => setSelectedArticle(2)}
-            >
-                Article 3
-            </button>
+        <div className="article-buttons">
+                <button
+                    onClick={() => setSelectedArticle(0)}
+                >
+                    Article 1
+                </button>
+                <button
+                    onClick={() => setSelectedArticle(1)}
+                >
+                    Article 2
+                </button>
+                <button
+                    onClick={() => setSelectedArticle(2)}
+                >
+                    Article 3
+                </button>
+        </div>
         </>
     )
 
