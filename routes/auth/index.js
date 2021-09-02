@@ -57,7 +57,7 @@ passport.use(new FacebookStrategy({
 },
 // this anonymous function fires after a successful login
 async function(accessToken, refreshToken, profile, cb) {
-	console.log("This is from facebook *******", JSON.stringify(profile));
+	// console.log("This is from facebook *******", JSON.stringify(profile));
   let user = await Users.findOrCreate({
     where: {
       firstName: profile.displayName,
@@ -84,6 +84,9 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     const id = req.user.id;
+    console.log(">>>>>>>>>>>>>>");
+    console.log(req.user);
+    console.log("<<<<<<<<<<<<<<");
     res.redirect(`/profile/${id}`);
   }
 );
