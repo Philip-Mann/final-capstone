@@ -38,9 +38,9 @@ router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     const id = req.user.id
-    // console.log(">>>>>>>>>>>>>>");
-    // console.log(req.user);
-    // console.log("<<<<<<<<<<<<<<");
+    console.log(">>>>>>>>>>>>>>");
+    console.log(req.user);
+    console.log("<<<<<<<<<<<<<<");
     res.redirect(`/profile/${id}`);
   }
 );
